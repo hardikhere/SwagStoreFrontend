@@ -22,7 +22,7 @@ const Payment = ({
    });
    const userId =  isAuthenticated()&& isAuthenticated().user._id;
    const token = isAuthenticated()&& isAuthenticated().token;
-
+   
 
    const getToken=(userId,token)=>{
          getmeToken(userId,token).then(info=>{
@@ -39,9 +39,10 @@ const Payment = ({
 
 
    const showdropin=()=>{
+       console.log(isAuthenticated().token);
      return (
         <div>
-            { info.clientToken!== null  ?(
+            { isAuthenticated().token !== undefined  ?(
                 <div>
                 <DropIn
                   options={{ authorization: info.clientToken }}
@@ -81,6 +82,7 @@ const Payment = ({
     const onPurchase =()=>{
         setInfo({loading:true});
         let nonce ;
+        if(info.instance !== undefined){
         let getNonce =
         info.instance.requestPaymentMethod().then(
             data=>{
@@ -107,6 +109,7 @@ const Payment = ({
                 })
             }
         )
+        }
     }
     const getAmount =(product)=>{
         let amount =0;

@@ -175,7 +175,7 @@ const AddProduct = () => {
       <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
         Admin Home
       </Link>
-      <div className="row bg-dark text-white rounded">
+      <div className="row bg-dark text-white rounded" style={{marginTop:"7rem"}}>
         <div className="col-md-8 offset-md-2">
           {successMessage()}
           {createProductForm()}

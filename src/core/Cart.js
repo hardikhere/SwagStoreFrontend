@@ -46,9 +46,9 @@ const  Cart=()=> {
   }, [reload]);
 
   return (
-    <Base title="Cart Page" description="Ready to checkout">
+    <Base title="Cart Page" desc="Ready to checkout">
      
-        <div className="row text-center">
+        <div className="row text-center" style={{marginTop:"10rem"}}>
         <div className="col-6">{
            products.length >0 ?loadAllProduct(products):(<h3>cart is empty</h3>)
         

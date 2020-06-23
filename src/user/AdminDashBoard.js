@@ -69,7 +69,7 @@ const AdminDash = ()=>{
         <Base title="Welcome admin" 
           className="container  p-4"
         desc="Manage all your products here">
-          <div className="row">
+          <div className="row" style={{marginTop:"7rem"}}>
               <div className="col-3">
               {adminLeft()}
               </div>

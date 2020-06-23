@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { signup } from "../auth/helper";
-
+import "../styles.css";
 const Signup = () => {
   const [values, setValues] = useState({
     name: "",
@@ -43,11 +43,15 @@ const Signup = () => {
 
   const signUpForm = () => {
     return (
-      <div className="row">
-        <div className="col-md-6 offset-sm-3 text-left">
+    
+
+     
+        <div className="signupBack" style={{width:"65%",position:"absolute",top:"7rem",left:"18%"}}>
+
+        
           <form>
             <div className="form-group">
-              <label className="text-light">Name</label>
+              <label className="text-white">Name</label>
               <input
                 className="form-control"
                 onChange={handleChange("name")}
@@ -56,7 +60,7 @@ const Signup = () => {
               />
             </div>
             <div className="form-group">
-              <label className="text-light">Email</label>
+              <label className="text-white">Email</label>
               <input
                 className="form-control"
                 onChange={handleChange("email")}
@@ -66,7 +70,7 @@ const Signup = () => {
             </div>
 
             <div className="form-group">
-              <label className="text-light">Password</label>
+              <label className="text-white">Password</label>
               <input
                 onChange={handleChange("password")}
                 className="form-control"
@@ -78,14 +82,14 @@ const Signup = () => {
               Submit
             </button>
           </form>
-        </div>
-      </div>
+          </div>
+      
     );
   };
 
   const successMessage = () => {
     return (
-      <div className="row">
+      <div className="row" >
         <div className="col-md-6 offset-sm-3 text-left">
           <div
             className="alert alert-success"
@@ -115,10 +119,13 @@ const Signup = () => {
   };
 
   return (
-    <Base title="Sign up page" description="A page for user to sign up!">
-      {successMessage()}
+    <Base title="Signup " desc="Signup to buy cool tshirts!">
+       {successMessage()}
       {errorMessage()}
+     
+      
       {signUpForm()}
+     
      
     </Base>
   );

@@ -48,7 +48,7 @@ const AddCategory = ()=>{
              .catch(err=>console.log(err));
      }
      const myCategoryFrom = ()=>(
-         <form>
+         <form >
              <div className="form-group">
                  <p className="lead">
                      Enter Category
@@ -72,11 +72,11 @@ const AddCategory = ()=>{
 
    return (
        <Base title="create category"
-         className="container bg-info p-4"
+         className="container bg-info p-4" 
        >
-           <div className="row bg-white rounded">
+           <div className="row bg-white rounded" >
            
-               <div className="col-md-8 offset-md-2">
+               <div className="col-md-8 offset-md-2" >
                    {successMsg(success)}
                    {errMsg(err)}
                   {myCategoryFrom()}

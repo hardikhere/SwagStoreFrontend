@@ -36,9 +36,9 @@ const handleChange = name => event => {
        //todo.. incomplete
        if(didRedirect){
         if(user && user.role ===1){
-           return <Redirect to ="/admin/dashboard" />;
+           return <Redirect to ="/" />;
         }else {
-            return <Redirect to ="/user/dashboard" />;
+            return <Redirect to ="/" />;
         }
       }
       if(isAuthenticated()){
@@ -80,16 +80,15 @@ const handleChange = name => event => {
 
     const singInFrom = ()=>{
         return (
-            <div className="row">
-                <div className="col-md-6 offset-sm-3 text-left">
+          <div className="signupBack" style={{width:"60%",position:"absolute",top:"7rem",left:"18%"}}>
                     <form >
                        
                        <div className="form-group">
-                           <label  className="text-light">Email</label>
+                           <label  className="text-white">Email</label>
                             <input onChange={handleChange("email")} className="form-control" value={email} type="email"/>
                        </div>
                        <div className="form-group">
-                           <label  className="text-light">password</label>
+                           <label  className="text-white">password</label>
                             <input onChange={handleChange("password")} className="form-control" value={password} type="password"/>
                        </div>
                        <button onClick={onsubmit} className="btn btn-success btn-block">
@@ -97,12 +96,12 @@ const handleChange = name => event => {
                        </button>
                     </form>
                 </div>
-            </div>
+         
         )
     }
 
     return (
-        <Base title="signin page">
+        <Base title="Signin" desc = "Signin to buy cool t-shirts">
             {loadingMessage()}
             {errorMessage()}
             {singInFrom()}

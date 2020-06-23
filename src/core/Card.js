@@ -57,6 +57,7 @@ const Card = ({
     );
   };
   return (
+    <div className="col-xs-4">
     <div className="card text-white bg-dark border border-info ">
       <div className="card-header lead">{cartTitle}</div>
       <div className="card-body">
@@ -72,6 +73,8 @@ const Card = ({
         </div>
       </div>
     </div>
+    </div>
+    
   );
 };
 

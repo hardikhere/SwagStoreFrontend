@@ -1,16 +1,35 @@
-.btn,
-.jumbotron,
-.nav :hover {
-  border-radius: 0px;
+.introback {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 3;
+  background: linear-gradient(268deg, #68e8c7, #68e8a0, #5cb7d9);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 28s ease infinite;
+  -moz-animation: AnimationName 28s ease infinite;
+  animation: AnimationName 28s ease infinite;
 }
 
-body {
-  background: #343a40;
+@-webkit-keyframes AnimationName {
+  0%{background-position:76% 0%}
+  50%{background-position:25% 100%}
+  100%{background-position:76% 0%}
 }
-footer{
-  position: fixed;
-  bottom: 0px;
-  right:0px;
-  left:0px;
-  top: 95%;
+@-moz-keyframes AnimationName {
+  0%{background-position:76% 0%}
+  50%{background-position:25% 100%}
+  100%{background-position:76% 0%}
+}
+@keyframes AnimationName {
+  0%{background-position:76% 0%}
+  50%{background-position:25% 100%}
+  100%{background-position:76% 0%}
+}
+
+.signupBack{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: rgba(66,66,66,0.9);
+  padding: 2vw;
+  
 }
