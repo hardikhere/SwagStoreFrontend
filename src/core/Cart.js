@@ -46,11 +46,12 @@ const  Cart=()=> {
   }, [reload]);
 
   return (
-    <Base title="Cart Page" desc="Ready to checkout">
-     
-        <div className="row text-center" style={{marginTop:"10rem"}}>
+      <>
+    <Base title="Cart Page" desc="Ready to checkout"></Base>
+    <div className="container" style={{marginTop:"22%"}}>
+          <div className="row text-center" style={{marginTop:"10rem"}}>
         <div className="col-6">{
-           products.length >0 ?loadAllProduct(products):(<h3>cart is empty</h3>)
+           products.length >0 ?loadAllProduct(products):(<img style={{height:"400px"}} src="./emptycart.jpg"/>)
         
 
         }</div>
@@ -64,8 +65,40 @@ const  Cart=()=> {
         }</div>
             
         </div>
+        
+    </div>
+    <footer>
+    <div style={{width:"100%",height:"15rem",backgroundColor:"rgb(66,66,66)",position:"inherit",marginTop:"14%",marginBottom:0}}>
+      <div style={{textAlign:"center",padding:"2rem"}}>
+      <h3 style={{color:"white"}}> Made with &nbsp;
+      <i className="fa fa-heart" aria-hidden="true" style={{color:"white"}}></i>&nbsp;
+      by Hardik Khanchandani
+      </h3>
+      </div>
+      <div style={{textAlign:"center",color:"white"}}>
+        <h3>
+        Front End Source Code &nbsp; 
+        <a href="https://github.com/hardikhere/ecomfronend">
+        <i style={{fontSize:"2.4rem"}} className="fa fa-github" aria-hidden="true"></i>
+        </a>
+        </h3>
+       
+        <h3>
+        Back End Source Code &nbsp; 
+        <a href="https://github.com/hardikhere/ecombackend">
+        <i style={{fontSize:"2.4rem"}} className="fa fa-github" aria-hidden="true"></i>
+        </a>
+        </h3>
+      </div>
+     
+    
+    </div>
+</footer>
+ 
+     
+    </>  
    
-    </Base>
+    
   );
 }
 export default Cart;

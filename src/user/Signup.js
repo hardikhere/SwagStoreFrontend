@@ -46,7 +46,7 @@ const Signup = () => {
     
 
      
-        <div className="signupBack" style={{width:"65%",position:"absolute",top:"7rem",left:"18%"}}>
+        <div className="signupBack" style={{width:"65%",marginLeft:"16%"}}>
 
         
           <form>
@@ -119,15 +119,49 @@ const Signup = () => {
   };
 
   return (
-    <Base title="Signup " desc="Signup to buy cool tshirts!">
+    <>
+    <Base title="Signup " desc="Signup to buy cool tshirts!"></Base>
        {successMessage()}
       {errorMessage()}
      
-      
-      {signUpForm()}
+      <div className="container" style={{marginTop:"23%"}}>
+        <div className="row">
+          <div className="col-12">
+          {signUpForm()}
+          </div>
+        </div>
+      </div>
+      <footer>
+    <div style={{width:"100%",height:"15rem",backgroundColor:"rgb(66,66,66)",position:"inherit",marginTop:"14%",marginBottom:0}}>
+      <div style={{textAlign:"center",padding:"2rem"}}>
+      <h3 style={{color:"white"}}> Made with &nbsp;
+      <i className="fa fa-heart" aria-hidden="true" style={{color:"white"}}></i>&nbsp;
+      by Hardik Khanchandani
+      </h3>
+      </div>
+      <div style={{textAlign:"center",color:"white"}}>
+        <h3>
+        Front End Source Code &nbsp; 
+        <a href="https://github.com/hardikhere/ecomfronend">
+        <i style={{fontSize:"2.4rem"}} className="fa fa-github" aria-hidden="true"></i>
+        </a>
+        </h3>
+       
+        <h3>
+        Back End Source Code &nbsp; 
+        <a href="https://github.com/hardikhere/ecombackend">
+        <i style={{fontSize:"2.4rem"}} className="fa fa-github" aria-hidden="true"></i>
+        </a>
+        </h3>
+      </div>
+     
+    
+    </div>
+</footer>
+ 
      
      
-    </Base>
+    </>
   );
 };
 

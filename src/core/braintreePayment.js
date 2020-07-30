@@ -12,7 +12,7 @@ const Payment = ({
     setReload=f=>f,
     reload=undefined
 })=>{
-
+   const [showCard,setCard] = useState(false);
    const [info,setInfo] = useState({
        loading:false,
        success:false,
@@ -33,6 +33,7 @@ const Payment = ({
             else{
                 const clientToken = info.clientToken;
                 setInfo({clientToken});
+                setCard(true);
             }
          });
    };
@@ -40,17 +41,26 @@ const Payment = ({
 
    const showdropin=()=>{
        console.log(isAuthenticated().token);
+       console.log(info.clientToken);
      return (
         <div>
             { isAuthenticated().token !== undefined  ?(
                 <div>
-                <DropIn
+                    {
+                        showCard && (
+                            <>
+                             <DropIn
                   options={{ authorization: info.clientToken }}
                   onInstance={(instance) => (info.instance = instance)}
                 />
                 <button className="btn btn-block btn-success" onClick={
                     onPurchase
                 }>Buy</button>
+
+                            </>
+                        )
+                    }
+               
               </div>
             ):(
                 <h3>
