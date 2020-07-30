@@ -28,8 +28,9 @@ export default function Home() {
 
   return (
     <>
-    <Base title="Tshirt Shop" desc="Welcome to the Tshirt Store">
-      <div className="row " style={{marginTop:"7rem"}}>
+    <Base title="Tshirt Shop" desc="Welcome to the Tshirt Store"></Base>
+    <div className="container">
+    <div className="row " style={{marginTop:"23%"}}>
         <div className="col-12" style={{textAlign:"center"}}>
         <h1 style={{padding:"2vw"}}>All of tshirts</h1>
         </div>
@@ -76,13 +77,16 @@ export default function Home() {
       </div>
       </div>
      
-    </Base>
+
+    </div>
+     
+    
     <footer>
              <div style={{width:"100%",height:"15rem",backgroundColor:"rgb(66,66,66)",position:"inherit",marginTop:"14%",marginBottom:0}}>
                <div style={{textAlign:"center",padding:"2rem"}}>
                <h3 style={{color:"white"}}> Made with &nbsp;
                <i className="fa fa-heart" aria-hidden="true" style={{color:"white"}}></i>&nbsp;
-               by hardik khanchandani
+               by Hardik Khanchandani
                </h3>
                </div>
                <div style={{textAlign:"center",color:"white"}}>

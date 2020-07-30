@@ -71,22 +71,64 @@ const AddCategory = ()=>{
      )
 
    return (
-       <Base title="create category"
-         className="container bg-info p-4" 
-       >
-           <div className="row bg-white rounded" >
+       <>
+       <Base title="create category" syle={{position:"relative"}}>
+ 
+       </Base>
+       <div className="container" style={{position:"relative"}}>
+             <div className="row" >
+            
+              <div className="col-md-8 offset-md-2" >
+                 {successMsg(success)}
+                 {errMsg(err)}
+                 
            
-               <div className="col-md-8 offset-md-2" >
-                   {successMsg(success)}
-                   {errMsg(err)}
-                  {myCategoryFrom()}
-                  {goBack()}
-               
+              </div>
+             </div>
+             <div className="row" style={{marginTop:"20%"}}>
+             {goBack()}
+                   <div className="col-2 col-sm-0 col-xs-0"></div>
+                  <div className="col-8 col-md-12 col-lg-12">
+                      <div className="offset-md-3 p-3" style={{width:"500px",height:"200px",backgroundColor:"#DDDDDD","-webkit-box-shadow": "6px 6px 18px -6px rgba(105,105,105,0.83)",
+"-moz-box-shadow": "6px 6px 18px -6px rgba(105,105,105,0.83)",
+"box-shadow":" 6px 6px 18px -6px rgba(105,105,105,0.83)"}}>
+                         {myCategoryFrom()}
+                      </div>
+                      
+                  </div>
+                   <div className="col-2 col-sm-0 col-xs-0"></div>
+
                </div>
            </div>
-
-       
-       </Base>
+           <footer>
+             <div style={{width:"100%",height:"15rem",backgroundColor:"rgb(66,66,66)",position:"inherit",marginTop:"14%",marginBottom:0}}>
+               <div style={{textAlign:"center",padding:"2rem"}}>
+               <h3 style={{color:"white"}}> Made with &nbsp;
+               <i className="fa fa-heart" aria-hidden="true" style={{color:"white"}}></i>&nbsp;
+               by Hardik Khanchandani
+               </h3>
+               </div>
+               <div style={{textAlign:"center",color:"white"}}>
+                 <h3>
+                 Front End Source Code &nbsp; 
+                 <a href="https://github.com/hardikhere/ecomfronend">
+                 <i style={{fontSize:"2.4rem"}} className="fa fa-github" aria-hidden="true"></i>
+                 </a>
+                 </h3>
+                
+                 <h3>
+                 Back End Source Code &nbsp; 
+                 <a href="https://github.com/hardikhere/ecombackend">
+                 <i style={{fontSize:"2.4rem"}} className="fa fa-github" aria-hidden="true"></i>
+                 </a>
+                 </h3>
+               </div>
+              
+             
+             </div>
+         </footer>
+          
+       </>
    );
 };
 export default AddCategory;
