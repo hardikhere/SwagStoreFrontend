@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ImageHelper from "./helper/ImageHelper";
 import { Redirect } from "react-router-dom";
 import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
+import HeartIcon from "./icons/HeartIcon";
 
 const Card = ({
   product,
@@ -76,10 +77,24 @@ const Card = ({
       </div>
     </div>)
   }
+  const [filled, setfilled] = useState(false);
+  const markWish = () => {
+    setfilled(!filled)
+  }
+  const [showDesc, setshowDesc] = useState(false);
   return (
-    <div className="mycard mycard-wrapper ">
+    <div className="mycard mycard-wrapper"
+      onMouseOver={() => setshowDesc(true)}
+      onMouseOut={() => setshowDesc(false)}
+    >
       <div className="flex flex-jc-center">
-        <div>{cartTitle}</div>
+        <div style={{ width: "70%", padding: "20px 0 20px 0" }}>{cartTitle}</div>
+        <div onClick={markWish} className="flex flex-jc-center flex-ai-center" style={{ width: "30%" }}>
+          <div >
+            <HeartIcon filled={filled} />
+          </div>
+        </div>
+
       </div>
       <div className="mycard-imagewrapper ">
         {getARedirect(redirect)}
@@ -87,10 +102,20 @@ const Card = ({
           <ImageHelper product={product} />
         </div>
       </div>
+      <div className="flex flex-row flex-jc-center" style={{ padding: "10px" }}>
+        <div>${cartPrice}</div>
+      </div>
       <div className="flex flex-row flex-jc-center">
-          <div className="add-btn"   onClick={addToCart}>
-             ADD TO CART
+        <div className="add-btn" onClick={addToCart}>
+          ADD TO CART
           </div>
+        <div className="">{showRemoveFromCart(removeFromCart)}</div>
+      </div>
+      <div className="flex flex-row flex-jc-center mycard-desc"
+        style={{
+          display: showDesc ? "" : "none", transition: "transform 1s ease-out"
+        }}>
+        <h6> {cartDescrption}</h6>
       </div>
     </div>
   );

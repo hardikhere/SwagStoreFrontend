@@ -30,10 +30,12 @@
 .mycard {
     text-transform: uppercase;
     font-weight: lighter;
+    border-radius: 1rem;
     font-size: medium;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+    transition: transform .6s ease;
+    transition-duration: 1s;
     margin: 3%;
     width: 19rem;
     padding: 1rem;
@@ -43,13 +45,14 @@
     &-imagewrapper{
         height: fit-content;
         width: 100%;
+        border-radius: 1rem;
         overflow: hidden;
         justify-content: center;
     }
     &-image{
-        transition: transform .5s ease;
+        transition: transform .6s ease;
         width: 70%;
-        border-radius: 50%;
+        border-radius: 5rem;
         max-height: 13rem;
         justify-content: center;
         min-height: 9.4rem;
@@ -76,8 +79,8 @@ body,html{
 
 .mycard:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    transition:  .5s ease-in-out;
-    font-size: larger;
+    transition:  .7s ease-in-out;
+    font-size: large;
     .mycard-image{
         transform: scale(1.5);
         animation-name: imageAnimation;
@@ -94,4 +97,7 @@ body,html{
         border-radius: 9%;
     }
 }
-  
+
+.heart-icon{
+   cursor: pointer;
+}
