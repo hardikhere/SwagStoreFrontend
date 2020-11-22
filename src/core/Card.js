@@ -56,25 +56,43 @@ const Card = ({
       )
     );
   };
-  return (
-    <div className="col-xs-4">
-    <div className="card text-white bg-dark border border-info ">
-      <div className="card-header lead">{cartTitle}</div>
-      <div className="card-body">
-        {getARedirect(redirect)}
-        <ImageHelper product={product} />
-        <p className="lead bg-success font-weight-normal text-wrap">
-          {cartDescrption}
-        </p>
-        <p className="btn btn-success rounded  btn-sm px-4">$ {cartPrice}</p>
-        <div className="row">
-          <div className="col-12">{showAddToCart(addtoCart)}</div>
-          <div className="col-12">{showRemoveFromCart(removeFromCart)}</div>
+
+  const oldCard = () => {
+    return (<div className="col-xs-4">
+      <div className="card text-white bg-dark border border-info ">
+        <div className="card-header lead">{cartTitle}</div>
+        <div className="card-body">
+          {getARedirect(redirect)}
+
+          <p className="lead bg-success font-weight-normal text-wrap">
+            {cartDescrption}
+          </p>
+          <p className="btn btn-success rounded  btn-sm px-4">$ {cartPrice}</p>
+          <div className="row">
+            <div className="col-12">{showAddToCart(addtoCart)}</div>
+            <div className="col-12">{showRemoveFromCart(removeFromCart)}</div>
+          </div>
         </div>
       </div>
+    </div>)
+  }
+  return (
+    <div className="mycard mycard-wrapper ">
+      <div className="flex flex-jc-center">
+        <div>{cartTitle}</div>
+      </div>
+      <div className="mycard-imagewrapper ">
+        {getARedirect(redirect)}
+        <div className="flex flex-jc-center">
+          <ImageHelper product={product} />
+        </div>
+      </div>
+      <div className="flex flex-row flex-jc-center">
+          <div className="add-btn"   onClick={addToCart}>
+             ADD TO CART
+          </div>
+      </div>
     </div>
-    </div>
-    
   );
 };
 

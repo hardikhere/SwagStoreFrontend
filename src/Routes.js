@@ -11,7 +11,7 @@ import AddCategory from './admin/AddCategory';
 import ManageCategories from './admin/ManageCategory';
 import AddProduct from './admin/AddProduct';
 import Cart from './core/Cart';
-
+import "./core/style.scss"
 
 
 export default function Routes(){
