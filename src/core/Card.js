@@ -58,25 +58,6 @@ const Card = ({
     );
   };
 
-  const oldCard = () => {
-    return (<div className="col-xs-4">
-      <div className="card text-white bg-dark border border-info ">
-        <div className="card-header lead">{cartTitle}</div>
-        <div className="card-body">
-          {getARedirect(redirect)}
-
-          <p className="lead bg-success font-weight-normal text-wrap">
-            {cartDescrption}
-          </p>
-          <p className="btn btn-success rounded  btn-sm px-4">$ {cartPrice}</p>
-          <div className="row">
-            <div className="col-12">{showAddToCart(addtoCart)}</div>
-            <div className="col-12">{showRemoveFromCart(removeFromCart)}</div>
-          </div>
-        </div>
-      </div>
-    </div>)
-  }
   const [filled, setfilled] = useState(false);
   const markWish = () => {
     setfilled(!filled)
@@ -88,7 +69,7 @@ const Card = ({
       onMouseOut={() => setshowDesc(false)}
     >
       <div className="flex flex-jc-center">
-        <div style={{ width: "70%", padding: "20px 0 20px 0" }}>{cartTitle}</div>
+        <div className="mycard-title" style={{ width: "70%", padding: "20px 0 20px 0" }}>{cartTitle}</div>
         <div onClick={markWish} className="flex flex-jc-center flex-ai-center" style={{ width: "30%" }}>
           <div >
             <HeartIcon filled={filled} />
@@ -106,9 +87,9 @@ const Card = ({
         <div>${cartPrice}</div>
       </div>
       <div className="flex flex-row flex-jc-center">
-        <div className="add-btn" onClick={addToCart}>
+        {!removeFromCart && <div className="add-btn" onClick={addToCart}>
           ADD TO CART
-          </div>
+          </div>}
         <div className="">{showRemoveFromCart(removeFromCart)}</div>
       </div>
       <div className="flex flex-row flex-jc-center mycard-desc"
