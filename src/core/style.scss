@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 .flex{
     display: flex;
     &-jc{
@@ -72,6 +74,16 @@
         min-height: 9.4rem;
     }
 }
+
+.mybrand{
+    font-family: 'Pacifico', cursive;
+    font-size: x-large;
+    font-weight: bolder;
+    background: -webkit-linear-gradient(70deg, rgba(255,87,87,1) 0%, rgba(176,86,235,1) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 body,html{
     background-color: whitesmoke;
 }
@@ -90,6 +102,16 @@ body,html{
     &:hover{
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     }
+}
+
+.mynav-bar{
+    position: fixed;
+    width: 90%;
+    border-bottom: solid #348796 ;
+    border-radius: 0rem 0rem 1rem 1rem ;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #dddddd   ;
+    z-index: 10000;
 }
 
 .mycard:hover {
