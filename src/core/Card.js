@@ -96,7 +96,7 @@ const Card = ({
         style={{
           display: showDesc ? "" : "none", transition: "transform 1s ease-out"
         }}>
-        <h6> {cartDescrption}</h6>
+        <small> {cartDescrption}</small>
       </div>
     </div>
   );

@@ -28,9 +28,9 @@ export default function Home() {
 
   return (
     <>
-      <Base title="Tshirt Shop" desc="Welcome to the Tshirt Store"></Base>
+      <Base title="Tshirt Shop" desc="Welcome to the Tshirt Store">
       <div className="container">
-        <div className="row " style={{ marginTop: "23%" }}>
+        <div className="row " >
           <div className="col-12" style={{ textAlign: "center" }}>
             <h1 style={{ padding: "2vw" }}>All of tshirts</h1>
           </div>
@@ -105,6 +105,7 @@ export default function Home() {
 
         </div>
       </footer>
+      </Base>
     </>
   );
 }
