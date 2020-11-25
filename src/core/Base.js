@@ -9,14 +9,14 @@ const Base = ({
 }) => (<>
     <div>
         <Menu></Menu>
-        <div className="container-fluid mt-5">
+        <div className=" mt-5">
             <div className="landing-banner">
                 <div className="landing-banner-container">
                     <div className="mybrand" style={{ fontSize: "3.5rem",height:"6rem",width:"17rem" }}>SwagStore</div>
                 </div>
             </div>
             <div className="row" style={{ position: "relative" }}>
-                <div className="col-12">
+                <div className="col p-0 m-0">
                     {children}
                 </div>
             </div>

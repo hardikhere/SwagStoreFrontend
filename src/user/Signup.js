@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { signup } from "../auth/helper";
 import "../styles.css";
 import Menu from "../menu";
+import Spinner from "../core/Spinner";
+import YouthImg from "../img/4009963.jpg"
 const Signup = () => {
   const [values, setValues] = useState({
     name: "",
@@ -13,7 +15,7 @@ const Signup = () => {
     role: 1,
     success: false
   });
-
+  const [Loading, setLoading] = useState(false);
   const { name, email, password, error, success, role } = values;
 
   const handleChange = name => event => {
@@ -22,10 +24,12 @@ const Signup = () => {
 
   const onSubmit = event => {
     event.preventDefault();
+    setLoading(true);
     setValues({ ...values, error: false });
     signup({ name, email, password, role })
       .then(data => {
         console.log(data);
+        setLoading(false)
         if (data.err || data.errors) {
           setValues({ ...values, error: data.err || data.errors, success: false });
         } else {
@@ -79,9 +83,10 @@ const Signup = () => {
               value={password}
             />
           </div>
-          <button onClick={onSubmit} className="btn btn-success btn-block">
+          { Loading ? <button onClick={onSubmit} className="btn btn-success btn-block">
             Submit
-            </button>
+            </button> : <Spinner/>
+            }
         </form>
       </div>
 
@@ -156,11 +161,11 @@ const Signup = () => {
                 value={password} />
             </div>
             <div className="myform-item  flex flex-jc-center flex-ai-center">
-              <div className="auth-btn" onClick={onSubmit}>Signup</div>
+              {!Loading ? <div className="auth-btn" onClick={onSubmit}>Signup</div>:<Spinner/>}
             </div>
-            <div className="p-3 mybrand flex flex-jc-center">
+            <div className="p-3 mybrand flex flex-jc-center ">
               SwagStore
-          </div>
+           </div>
           </div>
         </div>
       </div>

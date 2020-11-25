@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,100;1,200&display=swap');
 
 .auth-box{
+    border-top: solid palevioletred;
     width: 45%;
+    margin-top: 4%;
     height: auto;
     background-color: white;
     @include responsive(tab){
@@ -23,6 +25,14 @@
     }
 }
 
+
+.auth-foot{
+    background-image: url(../img/4009963.jpg);
+    width: 100%;
+    height: 8rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 #root{
   height: 100vh;
 }
