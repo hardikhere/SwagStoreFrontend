@@ -1,0 +1,77 @@
+@import "../mediaQueries.scss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,100;1,200&display=swap');
+
+.auth-box{
+    width: 45%;
+    height: auto;
+    background-color: white;
+    @include responsive(tab){
+        width: 80%;
+        height: auto;
+    }
+    @include responsive(phone){
+        width: 90%;
+        height: auto;
+    }
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 1rem;
+    &-title{
+        font-weight: lighter !important;
+        font-size: xx-large !important;
+        margin: 0.6rem;
+        padding: 0.6rem;
+    }
+}
+
+#root{
+  height: 100vh;
+}
+.myinput{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: x-large;
+    outline: none;
+    border-radius: 7px;
+    border-left:solid rgb(180, 180, 180) 1px;
+    border-top: solid rgb(180, 180, 180) 1px;
+    border-right:solid  rgb(180, 180, 180) 1px;
+    width: 100%;
+    border-bottom: solid #ec939b;
+    &:active,&:focus{
+        border-left:solid rgb(156, 156, 156) 1px;
+        border-top: solid rgb(156, 156, 156) 1px;
+        border-right:solid  rgb(156, 156, 156) 1px;
+        border-bottom: solid #F4636E;
+    }
+    
+}
+
+
+.myform{
+    &-container{
+       width: 70%;
+       font-family: 'Montserrat', sans-serif;
+       @include responsive(phone){
+           width: 90% !important;
+       }
+    }
+    &-item{
+        margin-top: 1.3rem;
+    }
+}
+
+.auth-btn{
+    padding: 2%;
+    text-align: center;
+    cursor: pointer;
+    border: solid  #F4636E ;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 3rem;
+    margin: 3%;
+    width: 40%;
+    background-color: #F4636E ;
+    color: whitesmoke;
+    &:hover{
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+}

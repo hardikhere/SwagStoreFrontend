@@ -1,10 +1,12 @@
 import React from 'react';
+import "./mediaQueries.scss";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from './core/Home';
 import Signup from './user/Signup';
 import Signin from './user/Signin';
 import userDash from './user/UserDashBoard';
 import AdminDash from './user/AdminDashBoard';
+import "./user/authStyle.scss";
 import AdminRoute from './auth/helper/AdminRoutes';
 import PrivateRoute from "./auth/helper/PrivateRoutes"
 import AddCategory from './admin/AddCategory';

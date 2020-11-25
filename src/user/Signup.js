@@ -3,17 +3,18 @@ import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { signup } from "../auth/helper";
 import "../styles.css";
+import Menu from "../menu";
 const Signup = () => {
   const [values, setValues] = useState({
     name: "",
     email: "",
     password: "",
     error: "",
-    role:1,
+    role: 1,
     success: false
   });
 
-  const { name, email, password, error, success,role } = values;
+  const { name, email, password, error, success, role } = values;
 
   const handleChange = name => event => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -22,11 +23,11 @@ const Signup = () => {
   const onSubmit = event => {
     event.preventDefault();
     setValues({ ...values, error: false });
-    signup({ name, email, password ,role})
+    signup({ name, email, password, role })
       .then(data => {
-          console.log(data);
+        console.log(data);
         if (data.err || data.errors) {
-          setValues({ ...values, error: data.err||data.errors, success: false });
+          setValues({ ...values, error: data.err || data.errors, success: false });
         } else {
           setValues({
             ...values,
@@ -43,47 +44,47 @@ const Signup = () => {
 
   const signUpForm = () => {
     return (
-    
 
-     
-        <div className="signupBack" style={{width:"65%",marginLeft:"16%"}}>
 
-        
-          <form>
-            <div className="form-group">
-              <label className="text-white">Name</label>
-              <input
-                className="form-control"
-                onChange={handleChange("name")}
-                type="text"
-                value={name}
-              />
-            </div>
-            <div className="form-group">
-              <label className="text-white">Email</label>
-              <input
-                className="form-control"
-                onChange={handleChange("email")}
-                type="email"
-                value={email}
-              />
-            </div>
 
-            <div className="form-group">
-              <label className="text-white">Password</label>
-              <input
-                onChange={handleChange("password")}
-                className="form-control"
-                type="password"
-                value={password}
-              />
-            </div>
-            <button onClick={onSubmit} className="btn btn-success btn-block">
-              Submit
-            </button>
-          </form>
+      <div className="signupBack" style={{ width: "65%", marginLeft: "16%" }}>
+
+
+        <form>
+          <div className="form-group">
+            <label className="text-white">Name</label>
+            <input
+              className="form-control"
+              onChange={handleChange("name")}
+              type="text"
+              value={name}
+            />
           </div>
-      
+          <div className="form-group">
+            <label className="text-white">Email</label>
+            <input
+              className="form-control"
+              onChange={handleChange("email")}
+              type="email"
+              value={email}
+            />
+          </div>
+
+          <div className="form-group">
+            <label className="text-white">Password</label>
+            <input
+              onChange={handleChange("password")}
+              className="form-control"
+              type="password"
+              value={password}
+            />
+          </div>
+          <button onClick={onSubmit} className="btn btn-success btn-block">
+            Submit
+            </button>
+        </form>
+      </div>
+
     );
   };
 
@@ -118,50 +119,52 @@ const Signup = () => {
     );
   };
 
+ 
   return (
-    <>
-    <Base title="Signup " desc="Signup to buy cool tshirts!"></Base>
-       {successMessage()}
-      {errorMessage()}
-     
-      <div className="container" style={{marginTop:"23%"}}>
-        <div className="row">
-          <div className="col-12">
-          {signUpForm()}
+    <div style={{ height: "100vh" }}>
+      <Menu></Menu>
+      <div className="flex flex-jc-center flex-ai-center" style={{ height: "100%" }}>
+        {successMessage()}
+        {errorMessage()}
+        <div className="auth-box">
+          <div className="auth-box-title mybrand flex flex-jc-center">
+            Signup
+          </div>
+          <div className="container myform-container">
+            <div className="myform-item flex flex-wrap flex-col">
+              <div className="name-input">
+                Name
+                <input className="myinput" type="text"
+                  onChange={handleChange("name")}
+                  type="text"
+                  value={name} />
+              </div>
+
+            </div>
+            <div className="myform-item  flex flex-wrap flex-col">
+              <div>Email</div>
+              <input className="myinput" type="text"
+                onChange={handleChange("email")}
+                type="email"
+                value={email} />
+            </div>
+            <div className="myform-item  flex flex-wrap flex-col">
+              <div>Password</div>
+              <input className="myinput" type="password"
+                onChange={handleChange("password")}
+                type="password"
+                value={password} />
+            </div>
+            <div className="myform-item  flex flex-jc-center flex-ai-center">
+              <div className="auth-btn" onClick={onSubmit}>Signup</div>
+            </div>
+            <div className="p-3 mybrand flex flex-jc-center">
+              SwagStore
+          </div>
           </div>
         </div>
       </div>
-      <footer>
-    <div style={{width:"100%",height:"15rem",backgroundColor:"rgb(66,66,66)",position:"inherit",marginTop:"14%",marginBottom:0}}>
-      <div style={{textAlign:"center",padding:"2rem"}}>
-      <h3 style={{color:"white"}}> Made with &nbsp;
-      <i className="fa fa-heart" aria-hidden="true" style={{color:"white"}}></i>&nbsp;
-      by Hardik Khanchandani
-      </h3>
-      </div>
-      <div style={{textAlign:"center",color:"white"}}>
-        <h3>
-        Front End Source Code &nbsp; 
-        <a href="https://github.com/hardikhere/ecomfronend">
-        <i style={{fontSize:"2.4rem"}} className="fa fa-github" aria-hidden="true"></i>
-        </a>
-        </h3>
-       
-        <h3>
-        Back End Source Code &nbsp; 
-        <a href="https://github.com/hardikhere/ecombackend">
-        <i style={{fontSize:"2.4rem"}} className="fa fa-github" aria-hidden="true"></i>
-        </a>
-        </h3>
-      </div>
-     
-    
     </div>
-</footer>
- 
-     
-     
-    </>
   );
 };
 
