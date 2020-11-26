@@ -106,9 +106,9 @@ body,html{
 .mynav-bar{
     position: fixed;
     width: 100%;
-    border-bottom: solid #4fb0e6 ;
+    border-bottom: solid palevioletred ;
     border-radius: 0rem 0rem 1rem 1rem ;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px 0 rgba(48, 48, 48, 0.2);
     background-color: #eeeeee   ;
     z-index: 10000;
 }
@@ -159,5 +159,78 @@ body,html{
     background: rgb(87,215,255);
 background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(86,141,235,0.5914740896358543) 100%);
 }
+
+
+.ball{
+    height:3rem;
+    border-radius:0.5rem;
+    width:3rem;
+    background-color: rgba(253, 108, 108, 0.6);
+    position:absolute;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    animation: ro 7s linear infinite;
+  
+  }
+  .ball-container{
+    display:flex;
+    margin: 1rem;
+    justify-content:center;
+    align-items:center;
+  }
+  .loader-circle{
+     display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:white;
+    font-size: small !important;
+    z-index:1000;
+    font-family: 'Pacifico', cursive;
+    font-weight: lighter;
+    color: #F4636E;
+    border:solid white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius:50%;
+    transition:width 2s ease;
+    height:1.3rem;
+    width:1.3rem;
+  }
+  @keyframes increaseSize{
+    0%{
+      border-width:0rem;
+    }
+    50%{
+     border-width:0.4rem;
+    }
+    100%{
+       border-width:0rem;
+    }
+  }
+  
+  .ball2{
+   height:3rem;
+    border-radius:0.5rem;
+    width:3rem;
+    background-color: rgba(253, 108, 108, 0.6);
+    position:absolute;
+     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    animation: ro2 7s linear infinite;
+  }
+  
+  @keyframes ro{
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform:rotate(360deg);
+    }
+  }
+  @keyframes ro2{
+    from{
+      transform: rotate(-90deg);
+    }
+    to{
+      transform:rotate(-450deg);
+    }
+  }
 
 
