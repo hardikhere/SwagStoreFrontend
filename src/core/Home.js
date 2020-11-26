@@ -85,6 +85,9 @@ export default function Home() {
               <Link className="nav-link" to="/signup">
                 Signup
                 </Link>
+                <Link className="nav-link" to="/signin">
+                Signin
+                </Link>
               <h3 style={{ color: "white" }}> Made with &nbsp;
                <i className="fa fa-heart" aria-hidden="true" style={{ color: "white" }}></i>&nbsp;
                by Hardik Khanchandani

@@ -27,7 +27,7 @@
 }
 .ball-container{
   display:flex;
-  padding: 1rem;
+  margin: 1rem;
   justify-content:center;
   align-items:center;
 }
@@ -47,7 +47,6 @@
   transition:width 2s ease;
   height:1.3rem;
   width:1.3rem;
-  animation:increaseSize 2s linear infinite;
 }
 @keyframes increaseSize{
   0%{
