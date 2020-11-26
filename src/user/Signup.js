@@ -83,10 +83,10 @@ const Signup = () => {
               value={password}
             />
           </div>
-          { Loading ? <button onClick={onSubmit} className="btn btn-success btn-block">
+          {Loading ? <button onClick={onSubmit} className="btn btn-success btn-block">
             Submit
-            </button> : <Spinner/>
-            }
+            </button> : <Spinner />
+          }
         </form>
       </div>
 
@@ -95,36 +95,31 @@ const Signup = () => {
 
   const successMessage = () => {
     return (
-      <div className="row" >
-        <div className="col-md-6 offset-sm-3 text-left">
+      <div className="snackbar snackbar-success" style={{ display: success ? "" : "none" }} >
           <div
-            className="alert alert-success"
-            style={{ display: success ? "" : "none" }}
+            className="snackbar-content"
           >
-            New account was created successfully. Please
-            <Link to="/signin">Login Here</Link>
+            New account was created successfully. Please <Link to="/signin">Login Here</Link>
           </div>
-        </div>
       </div>
     );
   };
 
   const errorMessage = () => {
     return (
-      <div className="row">
-        <div className="col-md-6 offset-sm-3 text-left">
-          <div
-            className="alert alert-danger"
-            style={{ display: error ? "" : "none" }}
-          >
-            {error}
-          </div>
+      <div className="snackbar snackbar-error"
+        style={{ display: error ? "" : "none" }}
+      >
+        <div
+          className="snackbar-content"
+        >
+          {error}
         </div>
       </div>
     );
   };
 
- 
+
   return (
     <div style={{ height: "100vh" }}>
       <Menu></Menu>
@@ -161,7 +156,7 @@ const Signup = () => {
                 value={password} />
             </div>
             <div className="myform-item  flex flex-jc-center flex-ai-center">
-              {!Loading ? <div className="auth-btn" onClick={onSubmit}>Signup</div>:<Spinner/>}
+              {!Loading ? <div className="auth-btn" onClick={onSubmit}>Signup</div> : <Spinner />}
             </div>
             <div className="p-3 mybrand flex flex-jc-center ">
               SwagStore

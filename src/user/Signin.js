@@ -52,16 +52,15 @@ const Signin = () => {
       return <Redirect to="/" />
     }
   };
-  const errorMessage = () => {
+  const ErrorMessage = () => {
     return (
-      <div className="row">
-        <div className="col-md-6 offset-sm-3 text-left">
-          <div
-            className="alert alert-danger"
-            style={{ display: error ? "" : "none" }}
-          >
-            {error}
-          </div>
+      <div className="snackbar snackbar-error"
+        style={{ display: error ? "" : "none" }}
+      >
+        <div
+        className="snackbar-content"
+        >
+          {error}
         </div>
       </div>
     );
@@ -70,8 +69,8 @@ const Signin = () => {
   const singInFrom = () => {
     return (
       <div className="flex flex-jc-center flex-ai-center" style={{ height: "100vh" }}>
-        {errorMessage()}
-        <div className="auth-box" style={{marginTop:"0"}}>
+        <ErrorMessage />
+        <div className="auth-box" style={{ marginTop: "0" }}>
           <div className="auth-box-title mybrand flex flex-jc-center">
             Signin
         </div>
@@ -91,7 +90,7 @@ const Signin = () => {
                 value={password} />
             </div>
             <div className="myform-item  flex flex-jc-center flex-ai-center">
-              {Loading ? <div className="auth-btn" onClick={onsubmit}>Signin</div> : <Spinner />}
+              {!Loading ? <div className="auth-btn" onClick={onsubmit}>Signin</div> : <Spinner />}
             </div>
             <div className="p-3 mybrand flex flex-jc-center ">
               SwagStore
@@ -105,10 +104,9 @@ const Signin = () => {
   return (
     <>
       <Menu></Menu>
-      {errorMessage()}
       {performRedirect()}
       <div className="">
-            {singInFrom()}
+        {singInFrom()}
       </div>
     </>
 

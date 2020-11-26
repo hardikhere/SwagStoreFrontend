@@ -161,13 +161,17 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
 }
 
 
-.ball{
+.ball, .ball2{
     height:3rem;
     border-radius:0.5rem;
     width:3rem;
-    background-color: rgba(253, 108, 108, 0.6);
+    background-color: rgba(244, 99, 111, 0.705);
     position:absolute;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.ball{
+   
     animation: ro 7s linear infinite;
   
   }
@@ -194,6 +198,39 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
     height:1.3rem;
     width:1.3rem;
   }
+
+.snackbar{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 2rem;
+    top:  10.5%;
+    width: fit-content;
+    color: whitesmoke;
+    position: absolute;
+    background-color: whitesmoke;
+    &-error{
+        background-color: rgba(233, 103, 103, 0.979) !important;
+    }
+    &-success{
+        background-color: rgb(95, 199, 130) !important;
+    }
+    animation-name: fromup;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    &-content{
+        padding: 12px;
+    }
+}
+@keyframes fromup{
+    from{
+        top: 8%;
+        opacity: 0;
+    }
+    to{
+        top: 10.5%;
+        opacity: 1;
+    }
+}
+
   @keyframes increaseSize{
     0%{
       border-width:0rem;
@@ -207,12 +244,7 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
   }
   
   .ball2{
-   height:3rem;
-    border-radius:0.5rem;
-    width:3rem;
-    background-color: rgba(253, 108, 108, 0.6);
-    position:absolute;
-     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+ 
     animation: ro2 7s linear infinite;
   }
   
