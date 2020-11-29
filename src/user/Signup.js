@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { signup } from "../auth/helper";
-import "../styles.css";
 import Menu from "../menu";
 import Spinner from "../core/Spinner";
 import YouthImg from "../img/4009963.jpg"

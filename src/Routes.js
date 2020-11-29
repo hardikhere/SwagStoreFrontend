@@ -14,7 +14,7 @@ import ManageCategories from './admin/ManageCategory';
 import AddProduct from './admin/AddProduct';
 import Cart from './core/Cart';
 import "./core/style.scss"
-
+import "font-awesome/css/font-awesome.css";
 
 export default function Routes(){
     return (

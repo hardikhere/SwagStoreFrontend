@@ -1,0 +1,41 @@
+@import "../mediaQueries.scss";
+
+.mobile-menu{
+    display: none;
+    height: 3.6rem;
+    transition: all 0.4s ease;
+    background-color: #fd6c78f5;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-top: solid rgb(255, 227, 255);
+    justify-content: space-evenly;
+    @include responsive(phone){
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      
+    }
+}
+
+
+
+.icon-wrapper{
+    width: 25%;
+    height: 100%;
+    border-bottom-left-radius: 1rem;
+    transition: all 0.4s ease;
+    border-bottom-right-radius: 1rem;
+    color: rgb(244, 232, 248);
+    font-size: larger;
+    height: 3.6rem;
+    align-items: center;
+    &:hover,&:active{
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        border-top: solid rgb(85, 197, 231);
+        font-size: x-large;
+    }
+}

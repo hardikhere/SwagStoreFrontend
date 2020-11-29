@@ -1,0 +1,11 @@
+@import "./mediaQueries.scss";
+.mynav-bar{
+  @include responsive(phone){
+      justify-content: center;
+  }
+}
+
+.fakenav{
+    width: 100%;
+    height: 4rem;
+}
