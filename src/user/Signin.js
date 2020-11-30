@@ -68,9 +68,9 @@ const Signin = () => {
 
   const singInFrom = () => {
     return (
-      <div className="flex flex-jc-center flex-ai-center" style={{ height: "100vh" }}>
+      <div className="flex flex-jc-center flex-ai-center" >
         <ErrorMessage />
-        <div className="auth-box" style={{ marginTop: "0" }}>
+        <div className="auth-box" style={{ marginTop: "3.4rem" }}>
           <div className="auth-box-title mybrand flex flex-jc-center">
             Signin
         </div>

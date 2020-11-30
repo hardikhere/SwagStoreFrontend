@@ -1,26 +1,31 @@
 @import "../mediaQueries.scss";
 
 .mobile-menu{
-    display: none;
-    height: 3.6rem;
-    transition: all 0.4s ease;
-    background-color: #fd6c78f5;
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    border-top: solid rgb(255, 227, 255);
-    justify-content: space-evenly;
+   display: none !important;
     @include responsive(phone){
-        display: flex;
+        height: 3.6rem;
+        display: flex !important;
         position: fixed;
-        bottom: 0;
         left: 0;
         right: 0;
+        bottom: 0%;
+        transition: all 0.4s ease;
+        background-color: #fd6c78f5;
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        border-top: solid rgb(255, 227, 255);
+        justify-content: space-evenly;
       
     }
 }
-
+.fake-mobilemenu{
+   @include responsive(phone){
+    height: 3.6rem;
+    width: 100%;
+   }
+}
 
 
 .icon-wrapper{

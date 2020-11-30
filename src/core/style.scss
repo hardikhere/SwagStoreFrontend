@@ -217,7 +217,8 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
     animation-duration: 1s;
     animation-timing-function: ease;
     &-content{
-        padding: 12px;
+        padding: 9px;
+        text-align: center;
     }
 }
 @keyframes fromup{
@@ -265,4 +266,19 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
     }
   }
 
+#root{
+    transition: all 0.4s ease-in-out;
+}
 
+.myfooter{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    background-color: #eeeeee;;
+    transition: all 0.4s ease;
+    border-top: solid palevioletred;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import "./core/style.scss";
 import "./mediaQueries.scss";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from './core/Home';
@@ -13,7 +14,7 @@ import AddCategory from './admin/AddCategory';
 import ManageCategories from './admin/ManageCategory';
 import AddProduct from './admin/AddProduct';
 import Cart from './core/Cart';
-import "./core/style.scss";
+
 
 export default function Routes(){
     return (

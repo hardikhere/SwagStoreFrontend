@@ -8,6 +8,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { Link } from "react-router-dom";
 import Menu from "../menu";
 import MobileMenu from "../MobileMenu/MobileMenu";
+import MyFooter from "./MyFooter";
 
 
 export default function Home() {
@@ -41,7 +42,6 @@ export default function Home() {
           {
             loading && (
               <>
-
                 <div key={1} className=" col-xs-4 col-md-4 col-sm-4 mb-4 ">
                   <SkeletonTheme color="#D0D0D0 " highlightColor="#E0E0E0">
                     <Skeleton height={300} width={300} />
@@ -73,41 +73,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-
-      <footer>
-        <div style={{ width: "100%", height: "15rem", backgroundColor: "rgb(66,66,66)", position: "inherit", marginTop: "14%", marginBottom: 0 }}>
-          <div style={{ textAlign: "center", padding: "2rem" }}>
-            <Link className="nav-link" to="/signup">
-              Signup
-                </Link>
-            <Link className="nav-link" to="/signin">
-              Signin
-                </Link>
-            <h3 style={{ color: "white" }}> Made with &nbsp;
-               <i className="fa fa-heart" aria-hidden="true" style={{ color: "white" }}></i>&nbsp;
-               by Hardik Khanchandani
-               </h3>
-          </div>
-          <div style={{ textAlign: "center", color: "white" }}>
-            <h3>
-              Front End Source Code &nbsp;
-                 <a href="https://github.com/hardikhere/ecomfronend">
-                <i style={{ fontSize: "2.4rem" }} className="fa fa-github" aria-hidden="true"></i>
-              </a>
-            </h3>
-
-            <h3>
-              Back End Source Code &nbsp;
-                 <a href="https://github.com/hardikhere/ecombackend">
-                <i style={{ fontSize: "2.4rem" }} className="fa fa-github" aria-hidden="true"></i>
-              </a>
-            </h3>
-          </div>
-
-
-        </div>
-      </footer>
+      <MyFooter />
       <MobileMenu />
     </div>
   );
