@@ -10,7 +10,8 @@ const Card = ({
   removeFromCart = false,
   setReload = f => f,
   //   function(f){return f}
-  reload = undefined
+  reload = undefined,
+  style
 }) => {
   const [redirect, setRedirect] = useState(false);
   const [count, setCount] = useState(product.count);
@@ -50,9 +51,9 @@ const Card = ({
             removeItemFromCart(product._id);
             setReload(!reload);
           }}
-          className="btn btn-block btn-outline-danger mt-2 mb-2"
+          className="btn btn-danger"
         >
-          Remove from cart
+          Remove
         </button>
       )
     );
@@ -64,12 +65,13 @@ const Card = ({
   }
   const [showDesc, setshowDesc] = useState(false);
   return (
-    <div className="mycard mycard-wrapper"
+    <div className="mycard mycard-wrapper flex flex-col"
       onMouseOver={() => setshowDesc(true)}
       onMouseOut={() => setshowDesc(false)}
+      style={style}
     >
-      <div className="flex flex-jc-center">
-        <div className="mycard-title" style={{ width: "70%", padding: "20px 0 20px 0" }}>{cartTitle}</div>
+      <div className="flex flex-jc-center mycard-header">
+        <div className="mycard-title" style={{ width: "70%", padding: "4% 0 4% 0" }}>{cartTitle}</div>
         <div onClick={markWish} className="flex flex-jc-center flex-ai-center" style={{ width: "30%" }}>
           <div >
             <HeartIcon filled={filled} />
@@ -83,10 +85,10 @@ const Card = ({
           <ImageHelper product={product} />
         </div>
       </div>
-      <div className="flex flex-row flex-jc-center" style={{ padding: "10px" }}>
+      <div className="flex flex-row flex-jc-center p-1 mycard-price">
         <div>${cartPrice}</div>
       </div>
-      <div className="flex flex-row flex-jc-center">
+      <div className="flex flex-row flex-jc-center mycard-buy">
         {!removeFromCart && <div className="add-btn" onClick={addToCart}>
           ADD TO CART
           </div>}

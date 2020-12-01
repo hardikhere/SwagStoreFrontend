@@ -17,7 +17,7 @@ const Cart = () => {
   const loadAllProduct = (products) => {
     return (
 
-      <div className="flex flex-col flex-wrap flex-ai-center" style={{width:"100%"}}>
+      <div className="flex  flex-wrap flex-ai-center flex-jc-center cards-holder" style={{ width: "100%" }}>
         {products.map((product, index) => (
           <Card
             key={index}
@@ -26,6 +26,7 @@ const Cart = () => {
             addtoCart={false}
             setReload={setReload}
             reload={reload}
+            style={{ width: "10rem", fontSize: "smaller", height: "14rem", margin: "1%" }}
           />
         ))}
       </div>
@@ -40,11 +41,12 @@ const Cart = () => {
   return (
     <div className="" >
       <Menu />
-      <div className="">
-        <div className="">{
+      <div className="flex flex-wrap cartarea">
+        <div className="" >{
           products.length > 0 ? loadAllProduct(products) : (<img style={{ height: "4rem" }} src="./emptycart.jpg" />)
-        }</div>
-        <div className="col-6">{
+        }
+        </div>
+        <div>{
           <Payment
             product={products}
             setReload={setReload}

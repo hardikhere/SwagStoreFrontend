@@ -52,25 +52,38 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: transform .4s ease;
     margin: 3%;
-    width: 19rem;
-    padding: 1rem;
+    width: 15rem;
+    padding: 0.6rem;
     &-wrapper{
         height: fit-content;
     }
     &-imagewrapper{
-        height: fit-content;
+        height: 40%;
         width: 100%;
+        display: flex;
         border-radius: 1rem;
         overflow: hidden;
         justify-content: center;
+        align-items: center;
     }
     &-image{
         transition: transform .5s ease;
         width: 70%;
         border-radius: 5rem;
-        max-height: 13rem;
         justify-content: center;
-        min-height: 9.4rem;
+    }
+    &-header{
+        height: 20%;
+    }
+    &-price{
+        height: 10%;
+        align-items: center;
+    }
+    &-buy{
+        height: 20%;
+    }
+    &-desc{
+        height: 10%;
     }
 }
 
@@ -281,4 +294,23 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
     background-color: #eeeeee;;
     transition: all 0.4s ease;
     border-top: solid palevioletred;
+}
+
+@import "../mediaQueries.scss";
+
+.cards-holder{
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.cartarea{
+    &>*{
+        width: 50%;
+        padding: 5%;
+    }
+    @include responsive(phone){
+        flex-direction: column !important;
+        &>*{
+            width: 100% !important;
+        }
+    }
 }
