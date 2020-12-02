@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link, useHistory, withRouter } from "react-router-dom";
 import { signout, isAuthenticated } from "./auth/helper";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import "./HomeStyles.scss";
 
@@ -50,8 +50,36 @@ const Menu = ({ history }) => (
     <div className="flex">
         <div className="fakenav"></div>
         <div className="mynav-bar flex flex-ai-center p-1">
-            <Link className="navbar-brand mybrand" to="/">SwagStore</Link>
+            <div className="mynav-bar-container">
+                <Link className="navbar-brand mybrand" to="/">SwagStore</Link>
+                <div className="mynav-bar-container-right">
+                    <div className="mynav-bar-item flex flex-col flex-ai-center">
+                        <Link className="nav-link" to="/">Home</Link>
+                        <div className="mynav-bar-item-bar"></div>
+                    </div>
+                    <div className="mynav-bar-item flex flex-col flex-ai-center">
+                        <Link className="nav-link" to="/cart">Cart</Link>
+                        <div className="mynav-bar-item-bar"></div>
+                    </div>
+                    {!isAuthenticated() && (
+                        <>
+                            <div className="mynav-bar-item flex flex-col flex-ai-center">
+                                <Link className="nav-link" to="/signup">
+                                    Signup
+                                </Link>
+                                <div className="mynav-bar-item-bar"></div>
+                             </div>
+                            <div className="mynav-bar-item flex flex-col flex-ai-center">
+                                <Link className="nav-link" to="/signin">
+                                Signin
+                                </Link>
+                                <div className="mynav-bar-item-bar"></div>
+                            </div>
+                        </>
+                    )}
+                </div>
         </div>
     </div>
+    </div >
 );
 export default Menu;

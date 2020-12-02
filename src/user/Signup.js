@@ -5,6 +5,8 @@ import { signup } from "../auth/helper";
 import Menu from "../menu";
 import Spinner from "../core/Spinner";
 import YouthImg from "../img/4009963.jpg"
+import MyFooter from "../core/MyFooter";
+import MobileMenu from "../MobileMenu/MobileMenu";
 const Signup = () => {
   const [values, setValues] = useState({
     name: "",
@@ -45,52 +47,6 @@ const Signup = () => {
       .catch(console.log("Error in signup"));
   };
 
-  const signUpForm = () => {
-    return (
-
-
-
-      <div className="signupBack" style={{ width: "65%", marginLeft: "16%" }}>
-
-
-        <form>
-          <div className="form-group">
-            <label className="text-white">Name</label>
-            <input
-              className="form-control"
-              onChange={handleChange("name")}
-              type="text"
-              value={name}
-            />
-          </div>
-          <div className="form-group">
-            <label className="text-white">Email</label>
-            <input
-              className="form-control"
-              onChange={handleChange("email")}
-              type="email"
-              value={email}
-            />
-          </div>
-
-          <div className="form-group">
-            <label className="text-white">Password</label>
-            <input
-              onChange={handleChange("password")}
-              className="form-control"
-              type="password"
-              value={password}
-            />
-          </div>
-          {Loading ? <button onClick={onSubmit} className="btn btn-success btn-block">
-            Submit
-            </button> : <Spinner />
-          }
-        </form>
-      </div>
-
-    );
-  };
 
   const successMessage = () => {
     return (
@@ -120,7 +76,7 @@ const Signup = () => {
 
 
   return (
-    <div style={{ height: "100vh" }}>
+    <div>
       <Menu></Menu>
       <div className="flex flex-jc-center flex-ai-center" style={{ height: "100%" }}>
         {successMessage()}
@@ -163,6 +119,8 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      <MyFooter/>
+      <MobileMenu/>
     </div>
   );
 };

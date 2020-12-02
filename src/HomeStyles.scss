@@ -1,7 +1,46 @@
 @import "./mediaQueries.scss";
 .mynav-bar{
-  @include responsive(phone){
+  &-container{
+    margin-left: 4%;
+    width: 100%;
+    margin-right: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include responsive(phone){
       justify-content: center;
+    }
+   &-right{
+     display: flex;
+    @include responsive(phone){
+      display: none !important;
+     }
+   }
+  }
+  &-item{
+    position: relative;
+       &-bar{
+         display: none;
+         height: 3px;
+         width: 100%;
+         background-color: rgb(212, 44, 100);
+         animation-name: increaseWidth;
+         animation-duration: 0.5s;
+       }
+     &:hover{
+       .mynav-bar-item-bar{
+         display: block;
+       }
+     }
+  }
+}
+
+@keyframes increaseWidth{
+  from{
+    width: 0%;
+  }
+  to{
+    width: 100%;
   }
 }
 

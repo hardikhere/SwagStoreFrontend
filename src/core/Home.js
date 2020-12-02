@@ -67,7 +67,7 @@ export default function Home() {
           <div className="flex flex-row flex-wrap flex-jc-center" style={{ width: "100%" }}>
             {products?.map((product, index) => {
               return (
-                <Card product={product} />
+                <Card product={product} style={{ height: "17rem" }} />
               );
             })}
           </div>

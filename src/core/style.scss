@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
+@import "../mediaQueries.scss";
 .flex{
     display: flex;
     &-jc{
@@ -90,6 +90,7 @@
 .mybrand{
     font-family: 'Pacifico', cursive;
     font-size: x-large;
+    transition: all 0.4s ease;
     font-weight: bolder;
     background: -webkit-linear-gradient(70deg, rgba(255,87,87,1) 0%, rgba(176,86,235,1) 100%);
     background-clip: text;
@@ -283,8 +284,15 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
     transition: all 0.4s ease-in-out;
 }
 
+.myfakefooter{
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 .myfooter{
-    padding: 15px;
+    padding: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,9 +302,30 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
     background-color: #eeeeee;;
     transition: all 0.4s ease;
     border-top: solid palevioletred;
+    @include responsive(big-desktop){
+        position: fixed;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+    }
+    @include responsive(desktop){
+        position: fixed;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+    }
+    @include responsive(tab){
+        position: fixed;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+    }
+    @include responsive(phone){
+        bottom: 2.9rem;
+        position: fixed;
+    }
 }
 
-@import "../mediaQueries.scss";
 
 .cards-holder{
     overflow-x: scroll;

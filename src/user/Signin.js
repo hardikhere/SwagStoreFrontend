@@ -3,6 +3,8 @@ import Menu from "../menu";
 import { Link, Redirect } from 'react-router-dom';
 import { signin, authenticate, isAuthenticated } from "../auth/helper"
 import Spinner from '../core/Spinner';
+import MyFooter from '../core/MyFooter';
+import MobileMenu from '../MobileMenu/MobileMenu';
 
 const Signin = () => {
   const [values, setValues] = useState({
@@ -58,7 +60,7 @@ const Signin = () => {
         style={{ display: error ? "" : "none" }}
       >
         <div
-        className="snackbar-content"
+          className="snackbar-content"
         >
           {error}
         </div>
@@ -108,6 +110,8 @@ const Signin = () => {
       <div className="">
         {singInFrom()}
       </div>
+      <MyFooter />
+      <MobileMenu />
     </>
 
   );
