@@ -1,0 +1,72 @@
+@import "../../mediaQueries.scss";
+.search{
+    &-wrapper{
+        position: relative;
+        @include responsive(phone){
+            position: absolute;
+            top: 120%;
+        }
+    }
+    &-input{
+        height: 2.5rem !important;
+        border-radius: 1.4rem !important;
+        width: 11rem !important;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px 0 rgba($color: #4b4b4b, $alpha: 0.4);
+    }
+    &-expand{
+        width: 16rem !important;
+        @include responsive(phone){
+            width: 80vw !important;
+        }
+    }
+    &-results{
+        padding: 0.2rem;
+        transition: all 0.7s ease;
+        border-radius: 1rem;
+        width: 100%;
+        &-item{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            width: auto;
+            border-radius: 1rem;
+            padding: 5px;
+            &>h5{
+                color: rgba($color: #3d3d3d, $alpha: 1.0) !important;
+            }
+            &:hover{
+                background-color: rgba($color: #a5a5a593, $alpha: 0.3);
+                color: rgba($color: #000000, $alpha: 1.0) !important;
+            }
+        }
+        position: absolute;
+        top: 110%;
+        background-color: white;
+        box-shadow: 0 2px 4px 0 rgba($color: #414141, $alpha: 0.4);
+        animation-name: searchAnim;
+        animation-duration: 0.8s;
+        animation-timing-function: ease;
+        width: 100%;
+        @include responsive(phone){
+            width: 100%;
+            top: 140%;
+            height: 10rem;
+            position: absolute;
+        }
+    }
+}
+
+@keyframes searchAnim{
+    0% {
+        transform: scale(0.6) ;
+        opacity: 0;
+        margin-bottom: 35%;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}

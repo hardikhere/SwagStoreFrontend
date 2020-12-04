@@ -33,6 +33,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <Menu></Menu>
+      <div className="fake-search"></div>
       <div className="" style={{ textAlign: "center" }}>
         <h1 style={{ padding: "2vw" }}>All of tshirts</h1>
       </div>

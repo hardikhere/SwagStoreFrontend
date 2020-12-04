@@ -326,7 +326,29 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
     }
 }
 
+.fake-search{
+    display: none;
+    @include responsive(phone){
+        display: block !important;
+        width: 100%;
+        height: 3rem;
+    }
+}
 
+.left-nav{
+    display: flex;
+    justify-content: center;
+  
+    @include responsive(big-desktop){
+        width: 50%;
+    }
+    @include responsive(desktop){
+        width: 50%;
+    }
+    @include responsive(tab){
+        width: 50%;
+    }
+}
 .cards-holder{
     overflow-x: scroll;
     overflow-y: hidden;
