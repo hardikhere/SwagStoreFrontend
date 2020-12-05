@@ -55,34 +55,35 @@ const Menu = ({ history }) => (
                 <div className="left-nav">
                     <Link className="navbar-brand mybrand" to="/">SwagStore</Link>
                 </div>
-               
+                <div className="menu-search">
                     <SearchBar />
-                    <div className="mynav-bar-container-right">
-                        <div className="mynav-bar-item flex flex-col flex-ai-center">
-                            <Link className="nav-link" to="/">Home</Link>
-                            <div className="mynav-bar-item-bar"></div>
-                        </div>
-                        <div className="mynav-bar-item flex flex-col flex-ai-center">
-                            <Link className="nav-link" to="/cart">Cart</Link>
-                            <div className="mynav-bar-item-bar"></div>
-                        </div>
-                        {!isAuthenticated() && (
-                            <>
-                                <div className="mynav-bar-item flex flex-col flex-ai-center">
-                                    <Link className="nav-link" to="/signup">
-                                        Signup
-                                </Link>
-                                    <div className="mynav-bar-item-bar"></div>
-                                </div>
-                                <div className="mynav-bar-item flex flex-col flex-ai-center">
-                                    <Link className="nav-link" to="/signin">
-                                        Signin
-                                </Link>
-                                    <div className="mynav-bar-item-bar"></div>
-                                </div>
-                            </>
-                        )}
+                </div>
+                <div className="mynav-bar-container-right">
+                    <div className="mynav-bar-item flex flex-col flex-ai-center">
+                        <Link className="nav-link" to="/">Home</Link>
+                        <div className="mynav-bar-item-bar"></div>
                     </div>
+                    <div className="mynav-bar-item flex flex-col flex-ai-center">
+                        <Link className="nav-link" to="/cart">Cart</Link>
+                        <div className="mynav-bar-item-bar"></div>
+                    </div>
+                    {!isAuthenticated() && (
+                        <>
+                            <div className="mynav-bar-item flex flex-col flex-ai-center">
+                                <Link className="nav-link" to="/signup">
+                                    Signup
+                                </Link>
+                                <div className="mynav-bar-item-bar"></div>
+                            </div>
+                            <div className="mynav-bar-item flex flex-col flex-ai-center">
+                                <Link className="nav-link" to="/signin">
+                                    Signin
+                                </Link>
+                                <div className="mynav-bar-item-bar"></div>
+                            </div>
+                        </>
+                    )}
+                </div>
             </div>
         </div>
     </div >

@@ -1,0 +1,80 @@
+.loading-card {
+    animation: borderAnimation 2.6s ease infinite;
+    border-top: solid ;
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: transform .4s ease;
+    margin: 3%;
+    width: 15rem;
+    height: 17rem;
+    padding: 0.6rem;
+    &-wrapper{
+        height: fit-content;
+    }
+    &-imagewrapper{
+        height: 40%;
+        width: 100%;
+        display: flex;
+        border-radius: 1rem;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+    }
+    &-image{
+        transition: transform .5s ease;
+        width: 70%;
+        border-radius: 5rem;
+        justify-content: center;
+    }
+    &-header{
+        height: 20%;
+    }
+    &-price{
+        height: 10%;
+        align-items: center;
+    }
+    &-buy{
+        height: 30%;
+    }
+}
+
+.skeleton{
+  &-box{
+      background-color: rgba(209, 209, 209, 0.911);
+      border-radius: 10px;
+      overflow: hidden;
+  }
+  &-runner{
+      width: 30%;
+      transition: all 0.4s ease;
+      background: rgb(2,0,36);
+      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(237, 237, 237, 0.5) 0%, rgba(242,242,242,1) 100%);
+      border-radius: 10px;
+      animation-name: skeletonRunner;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+  }
+}
+@keyframes skeletonRunner{
+    from{
+        margin-left: -20%;
+    }
+    to{
+        margin-left: 120%;
+    }
+}
+
+
+@keyframes borderAnimation{
+    0% {
+        border-color: palevioletred;
+    }
+    50%{
+      border-color:  #fcaa50;
+    }
+    100%{
+        border-color: #4fb0e6;
+    }
+}

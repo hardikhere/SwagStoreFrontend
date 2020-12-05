@@ -6,11 +6,12 @@ function SearchBar() {
     const [IsClicked, setIsClicked] = useState(false)
     return (
         <div className="search-wrapper flex flex-ai-center">
-            <div className="search-bar flex flex-ai-center">
+            <div className={`search-bar flex flex-ai-center ${IsClicked && "search-expand"}`}>
                 <input
                     onClickCapture={() => setIsClicked(true)}
-                    className={`myinput search-input ${IsClicked && "search-expand"}`} type="text" />
-                <div style={{ marginLeft: "10px", cursor: "pointer" }}>
+                    className={`search-input `} type="text" />
+                <div className="flex flex-jc-center"
+                    style={{ marginLeft: "10px", cursor: "pointer", width: "20%" }}>
                     {!IsClicked ? <FontAwesomeIcon icon={faSearch} onClick={() => setIsClicked(true)} /> :
                         <FontAwesomeIcon icon={faArrowLeft} onClick={() => setIsClicked(false)} />
                     }

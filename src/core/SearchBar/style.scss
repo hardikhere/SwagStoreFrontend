@@ -4,20 +4,33 @@
         position: relative;
         @include responsive(phone){
             position: absolute;
-            top: 120%;
         }
     }
-    &-input{
+    &-bar{
+        display: flex;
+        justify-content: center;
+        padding: 10px;
         height: 2.5rem !important;
         border-radius: 1.4rem !important;
-        width: 11rem !important;
+        width: 12rem !important;
         transition: all 0.3s ease;
-        box-shadow: 0 2px 4px 0 rgba($color: #4b4b4b, $alpha: 0.4);
+        background-color: white;
+        box-shadow: 0 1px 2px 0 rgba($color: #4b4b4b, $alpha: 0.3);
+       @include responsive(phone){
+          width: 65vw !important;
+          box-shadow: 0 2px 4px 0 rgba($color: #4b4b4b, $alpha: 0.4);
+       }
+    }
+    &-input{
+        border-style: none;
+        outline: none;
+        width: 80%;
     }
     &-expand{
-        width: 16rem !important;
+        width: 17rem !important;
+        border-bottom: solid palevioletred;
         @include responsive(phone){
-            width: 80vw !important;
+            width: 90vw !important;
         }
     }
     &-results{
@@ -52,7 +65,6 @@
         width: 100%;
         @include responsive(phone){
             width: 100%;
-            top: 140%;
             height: 10rem;
             position: absolute;
         }
@@ -61,8 +73,8 @@
 
 @keyframes searchAnim{
     0% {
-        transform: scale(0.6) ;
-        opacity: 0;
+        transform: scale(0.7) ;
+        opacity: 0.5;
         margin-bottom: 35%;
     }
     100%{

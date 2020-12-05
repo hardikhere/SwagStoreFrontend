@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 import Menu from "../menu";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import MyFooter from "./MyFooter";
+import SearchBar from "./SearchBar/SearchBar";
+import { LoadingCard } from "./LoadingCards/LoadingCard";
 
 
 export default function Home() {
@@ -33,38 +35,32 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <Menu></Menu>
-      <div className="fake-search"></div>
+
+
+
+      <div className="fake-search">
+        <SearchBar />
+      </div>
+
       <div className="" style={{ textAlign: "center" }}>
         <h1 style={{ padding: "2vw" }}>All of tshirts</h1>
       </div>
 
       <div style={{ width: "100%" }}>
-        <div>
+        <div className="flex flex-row flex-wrap flex-jc-center" style={{ width: "100%" }}>
           {
             loading && (
               <>
-                <div key={1} className=" col-xs-4 col-md-4 col-sm-4 mb-4 ">
-                  <SkeletonTheme color="#D0D0D0 " highlightColor="#E0E0E0">
-                    <Skeleton height={300} width={300} />
-                    <Skeleton count={3} width={300} />
-                  </SkeletonTheme>
-                </div>
-                <div key={2} className=" col-xs-4 col-md-4 col-sm-4 mb-4 ">
-                  <SkeletonTheme color="#D0D0D0 " highlightColor="#E0E0E0">
-                    <Skeleton height={300} width={300} />
-                    <Skeleton count={3} width={300} />
-                  </SkeletonTheme>
-                </div>
-                <div key={3} className=" col-xs-4 col-md-4 col-sm-4 mb-4 ">
-                  <SkeletonTheme color="#D0D0D0 " highlightColor="#E0E0E0">
-                    <Skeleton height={300} width={300} />
-                    <Skeleton count={3} width={300} />
-                  </SkeletonTheme>
-                </div>
-
+                {
+                  [12, 122, 33].map((val, ind)=>{
+                   return  <LoadingCard />
+              
+                })
+              }
               </>
             )
           }
+          </div>
           <div className="flex flex-row flex-wrap flex-jc-center" style={{ width: "100%" }}>
             {products?.map((product, index) => {
               return (
@@ -72,7 +68,7 @@ export default function Home() {
               );
             })}
           </div>
-        </div>
+        
       </div>
       <MyFooter />
       <MobileMenu />

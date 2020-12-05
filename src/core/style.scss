@@ -329,7 +329,9 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
 .fake-search{
     display: none;
     @include responsive(phone){
-        display: block !important;
+        display: flex !important;
+        position: relative;
+        justify-content: center;
         width: 100%;
         height: 3rem;
     }
