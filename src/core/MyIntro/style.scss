@@ -1,15 +1,18 @@
+@import "../../mediaQueries.scss";
+
+$wrapperHeight : 22rem;
 .my{
     &-profile{
         &-wrapper{
             display: none;
             width: 100%;
-            height: 15rem;
+            height: $wrapperHeight;
             animation-name: showProfile;
             animation-duration: 0.3s;
             animation-timing-function: ease;
         }
         &-header{
-            height: 40%;
+            height: 30%;
             overflow: hidden;
             &-img{
                 width: 50%;
@@ -28,7 +31,58 @@
         display: block;
     }
 }
+.myfooter{
+    padding: 15px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0%;
+    display: flex;
+    color: rgb(134, 134, 134);
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    width: 20rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    background-color: #ffffff;;
+    box-shadow: 0 2px 4px 0 rgba($color: #000000, $alpha: 0.4);
+    &:hover{
+        box-shadow: 0 4px 8px 0 rgba($color: #000000, $alpha: 0.4);
+    }
+    border-top: solid palevioletred;
+    border-bottom: none;
+    @include responsive(tab){
+        position: fixed !important;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+    }
+    @include responsive(phone){
+        bottom: 2.9rem;
+        position: fixed;
+        width: 100% !important;
+        left: 0%;
+        right: 0%;
+    }
+    &-expand{
+        transition: all 0.4s ease;
+        width: 22rem;
+        box-shadow: 0 4px 8px 0 rgba($color: #000000, $alpha: 0.4);
+    }
+}
 
+.expand{
+    transition: all 0.4s ease;
+}
+.logowrapper{
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 0.3rem;
+    margin: 5%;
+    margin-top: 0;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px 0 rgba($color: #000000, $alpha: 0.3);
+}
 .makedown{
     animation-name: rotateit;
     animation-duration: 0.8s;
@@ -47,6 +101,6 @@
         height: 0rem;
     }
     to{
-        height: 15rem;
+        height: $wrapperHeight;
     }
 }
