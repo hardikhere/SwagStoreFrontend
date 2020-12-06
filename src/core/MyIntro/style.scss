@@ -1,0 +1,52 @@
+.my{
+    &-profile{
+        &-wrapper{
+            display: none;
+            width: 100%;
+            height: 15rem;
+            animation-name: showProfile;
+            animation-duration: 0.3s;
+            animation-timing-function: ease;
+        }
+        &-header{
+            height: 40%;
+            overflow: hidden;
+            &-img{
+                width: 50%;
+                overflow: hidden;
+                border-radius: 2rem;
+            }
+            width: 100%;
+            &-right{
+                width: 50%;
+            }
+        }
+    }
+}
+.show{
+    &-profile{
+        display: block;
+    }
+}
+
+.makedown{
+    animation-name: rotateit;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    transition: all 0.3s ease;
+    transform: rotate(180deg);
+}
+@keyframes rotateit{ 
+    to{
+        transform: rotate(180deg);
+    }
+}
+@keyframes showProfile{
+    from{
+        height: 0rem;
+    }
+    to{
+        height: 15rem;
+    }
+}

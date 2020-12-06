@@ -8,9 +8,9 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { Link } from "react-router-dom";
 import Menu from "../menu";
 import MobileMenu from "../MobileMenu/MobileMenu";
-import MyFooter from "./MyFooter";
 import SearchBar from "./SearchBar/SearchBar";
 import { LoadingCard } from "./LoadingCards/LoadingCard";
+import MyFooter from "./MyIntro/MyFooter";
 
 
 export default function Home() {
@@ -54,7 +54,6 @@ export default function Home() {
                 {
                   [12, 122, 33].map((val, ind)=>{
                    return  <LoadingCard />
-              
                 })
               }
               </>
@@ -71,6 +70,7 @@ export default function Home() {
         
       </div>
       <MyFooter />
+      <div className="myfakefooter"></div>
       <MobileMenu />
     </div>
   );

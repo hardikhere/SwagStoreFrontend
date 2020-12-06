@@ -51,7 +51,7 @@
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: transform .4s ease;
-    margin: 3%;
+    margin: 2%;
     width: 15rem;
     padding: 0.6rem;
     &-wrapper{
@@ -185,8 +185,8 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
 }
 
 .ball{
-   
-    animation: ro 7s linear infinite;
+    
+    animation: ro 4s linear infinite;
   
   }
   .ball-container{
@@ -260,7 +260,7 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
   
   .ball2{
  
-    animation: ro2 7s linear infinite;
+    animation: ro2 4s linear infinite;
   }
   
   @keyframes ro{
@@ -285,37 +285,38 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
 }
 
 .myfakefooter{
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    @include responsive(phone){
+       padding: 12px;
+       display: flex;
+       height: 4rem;
+       justify-content: center;
+       align-items: center;
+       width: 100%;
+    }
+
 }
 .myfooter{
-    padding: 12px;
+    padding: 15px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0%;
     display: flex;
+    color: rgb(134, 134, 134);
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
+    width: 20rem;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
-    background-color: #eeeeee;;
-    transition: all 0.4s ease;
+    background-color: #ffffff;;
+    box-shadow: 0 2px 4px 0 rgba($color: #000000, $alpha: 0.4);
+    &:hover{
+        box-shadow: 0 4px 8px 0 rgba($color: #000000, $alpha: 0.4);
+    }
     border-top: solid palevioletred;
-    @include responsive(big-desktop){
-        position: fixed;
-        bottom: 0%;
-        left: 0%;
-        right: 0%;
-    }
-    @include responsive(desktop){
-        position: fixed;
-        bottom: 0%;
-        left: 0%;
-        right: 0%;
-    }
+    border-bottom: none;
     @include responsive(tab){
-        position: fixed;
+        position: fixed !important;
         bottom: 0%;
         left: 0%;
         right: 0%;
@@ -323,6 +324,9 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
     @include responsive(phone){
         bottom: 2.9rem;
         position: fixed;
+        width: 100% !important;
+        left: 0%;
+        right: 0%;
     }
 }
 
@@ -337,18 +341,31 @@ background: linear-gradient(73deg, rgba(87,215,255,0.5130427170868348) 0%, rgba(
     }
 }
 
+.upanim{
+    color: palevioletred;
+    font-size: larger;
+    animation-name: upit;
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+@keyframes upit{
+    0%{
+        margin-bottom: -5px;
+    }
+    50%{
+        margin-bottom: 2px;
+    }
+    100%{
+        margin-bottom: -5px;
+    }
+}
 .left-nav{
     display: flex;
-    justify-content: center;
-  
-    @include responsive(big-desktop){
-        width: 50%;
-    }
-    @include responsive(desktop){
-        width: 50%;
-    }
-    @include responsive(tab){
-        width: 50%;
+    justify-content: flex-start;
+    width: 50%;
+    @include responsive(phone){
+        justify-content: center;
     }
 }
 .cards-holder{

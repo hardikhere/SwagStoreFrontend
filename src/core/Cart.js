@@ -5,9 +5,9 @@ import Card from "./Card";
 import { getProducts } from "./helper/coreapicalls";
 import { loadCart } from "./helper/cartHelper";
 import Payment from "./braintreePayment";
-import MyFooter from "./MyFooter";
 import Menu from "../menu";
 import MobileMenu from "../MobileMenu/MobileMenu";
+import MyFooter from "./MyIntro/MyFooter";
 
 const Cart = () => {
   const [products, setProducts] = useState([]);

@@ -3,7 +3,7 @@ import Menu from "../menu";
 import { Link, Redirect } from 'react-router-dom';
 import { signin, authenticate, isAuthenticated } from "../auth/helper"
 import Spinner from '../core/Spinner';
-import MyFooter from '../core/MyFooter';
+import MyFooter from '../core/MyIntro/MyFooter';
 import MobileMenu from '../MobileMenu/MobileMenu';
 
 const Signin = () => {
@@ -111,6 +111,7 @@ const Signin = () => {
         {singInFrom()}
       </div>
       <MyFooter />
+      <div className="myfakefooter"></div>
       <MobileMenu />
     </>
 

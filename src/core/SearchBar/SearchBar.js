@@ -1,4 +1,4 @@
-import { faSearch, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faArrowLeft, faCross, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import "./style.scss";
@@ -11,9 +11,9 @@ function SearchBar() {
                     onClickCapture={() => setIsClicked(true)}
                     className={`search-input `} type="text" />
                 <div className="flex flex-jc-center"
-                    style={{ marginLeft: "10px", cursor: "pointer", width: "20%" }}>
+                    style={{ marginLeft: "10px", cursor: "pointer", width: "20%",color:"palevioletred" }}>
                     {!IsClicked ? <FontAwesomeIcon icon={faSearch} onClick={() => setIsClicked(true)} /> :
-                        <FontAwesomeIcon icon={faArrowLeft} onClick={() => setIsClicked(false)} />
+                        <FontAwesomeIcon icon={faTimes} onClick={() => setIsClicked(false)} />
                     }
                 </div>
             </div>

@@ -5,7 +5,7 @@ import { signup } from "../auth/helper";
 import Menu from "../menu";
 import Spinner from "../core/Spinner";
 import YouthImg from "../img/4009963.jpg"
-import MyFooter from "../core/MyFooter";
+import MyFooter from "../core/MyIntro/MyFooter";
 import MobileMenu from "../MobileMenu/MobileMenu";
 const Signup = () => {
   const [values, setValues] = useState({
