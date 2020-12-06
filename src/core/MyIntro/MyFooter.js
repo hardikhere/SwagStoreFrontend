@@ -10,7 +10,7 @@ import github from "../../img/github.png";
 import call from "../../img/call.svg";
 
 const MyFooter = () => {
-    const [Open, setOpen] = useState(true);
+    const [Open, setOpen] = useState(false);
     return (
         <div className={`myfooter flex flex-col ${Open && "myfooter-expand"}`} >
             <div onClick={() => setOpen(!Open)} className="flex flex-ai-center" style={{ justifyContent: "space-evenly", width: "100%" }}>
@@ -43,7 +43,7 @@ const MyFooter = () => {
                     </p>
                 </div>
 
-                <div className="my-profile-connect">
+                <div className="my-profile-connect" style={{marginBottom:"1rem"}}>
                     <h4 >Connect with me on</h4>
                     <div className="flex">
                         <div className="logowrapper flex flex-jc-center flex-ai-center">
