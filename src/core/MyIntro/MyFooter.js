@@ -34,17 +34,18 @@ const MyFooter = () => {
                         </div>
                     </div>
                 </div>
-
-                <div className="my-profile-content">
+                <div className="name">
                     <h4>I'm <span style={{ color: "dodgerblue" }}>Hardik Khanchandani</span></h4>
-                    <p>I hope you like this web application, I am using Nodejs, Expressjs for Server and
+                </div>
+                <div className="my-profile-content">
+                    I hope you like this web application, I am using Nodejs, Expressjs for Server and
                     MongoDB for Database. This frontend is developed on Reactjs and mostly styled on
                     SCSS. Thanks to flexbox
-                    </p>
+                    
                 </div>
 
-                <div className="my-profile-connect" style={{marginBottom:"1rem"}}>
-                    <h4 >Connect with me on</h4>
+                <div className="my-profile-connect" >
+                    <h4 className="connect-heading">Connect with me on</h4>
                     <div className="flex">
                         <div className="logowrapper flex flex-jc-center flex-ai-center">
                             <img style={{ height: "80%", width: "80%" }} src={Linkedin} alt="" />

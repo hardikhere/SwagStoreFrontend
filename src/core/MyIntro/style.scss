@@ -1,19 +1,27 @@
 @import "../../mediaQueries.scss";
 
-$wrapperHeight : 22rem;
+$wrapperHeight : 23rem;
 .my{
     &-profile{
         &-wrapper{
             display: none;
             width: 100%;
-            height: $wrapperHeight;
+            height: auto;
+            transition: all 0.4s ease;
             animation-name: showProfile;
             animation-duration: 0.3s;
             animation-timing-function: ease;
         }
+        &-content{
+            @include responsive(phone){
+               font-size: 15px;
+            }
+        }
         &-header{
             height: 30%;
             overflow: hidden;
+            margin-bottom: 2%;
+            margin-top: 2%;
             &-img{
                 width: 50%;
                 overflow: hidden;
@@ -30,6 +38,11 @@ $wrapperHeight : 22rem;
     &-profile{
         display: block;
     }
+}
+.connect-heading{
+    font-size: medium;
+    margin-top: 10px;
+    font-weight: bolder;
 }
 .myfooter{
     padding: 15px;
@@ -58,7 +71,7 @@ $wrapperHeight : 22rem;
         right: 0%;
     }
     @include responsive(phone){
-        bottom: 2.9rem;
+        bottom: 3.2rem;
         position: fixed;
         width: 100% !important;
         left: 0%;
@@ -85,10 +98,9 @@ $wrapperHeight : 22rem;
 }
 .makedown{
     animation-name: rotateit;
-    animation-duration: 0.8s;
     animation-timing-function: ease;
     animation-iteration-count: 1;
-    transition: all 0.3s ease;
+    transition: all 1s ease;
     transform: rotate(180deg);
 }
 @keyframes rotateit{ 
@@ -98,9 +110,9 @@ $wrapperHeight : 22rem;
 }
 @keyframes showProfile{
     from{
-        height: 0rem;
+        transform: scale(0.8);
     }
     to{
-        height: $wrapperHeight;
+        transform: scale(1);
     }
 }

@@ -120,6 +120,7 @@ const Signup = () => {
         </div>
       </div>
       <MyFooter/>
+      <div className="myfakefooter"></div>
       <MobileMenu/>
     </div>
   );
