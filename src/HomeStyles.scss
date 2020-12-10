@@ -19,6 +19,7 @@
   }
   &-item{
     position: relative;
+    margin: 0.5rem 1rem 0.5rem 1rem;
        &-bar{
          display: none;
          height: 3px;
@@ -27,20 +28,74 @@
          animation-name: increaseWidth;
          animation-duration: 0.5s;
        }
-     &:hover{
-       .mynav-bar-item-bar{
-         display: block;
-       }
-     }
+  }
+}
+.avatar{
+  transition: all 0.3s ease;
+  &-options{
+    position: absolute;
+    transition: all 0.7s ease;
+    font-size: larger;
+    font-weight: lighter;
+    top: 120%;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    width: 5rem;
+    animation-name:avataranim ;
+    animation-duration: 0.5s;
+    box-shadow: 0 2px 4px 0 rgba($color: #000000, $alpha: 0.3);
+    &-item{
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      &:hover{
+        border-bottom: solid palevioletred;
+        border-bottom-width: 1px;
+        background-color: rgba($color: #999999, $alpha: 0.1);
+      }
+    }
   }
 }
 
+@keyframes avataranim{
+  from{
+    opacity: 0;
+    transform: scale(0.7) skewY(30deg);
+  }
+  to{
+    transform: scale(1) skewY(0deg);
+    opacity: 1;
+  }
+}
 @keyframes increaseWidth{
   from{
     width: 0%;
   }
   to{
     width: 100%;
+  }
+}
+
+.fa-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  padding: 0.2rem;
+  background-color: white;
+  color: palevioletred;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px 0 rgba($color: #000000, $alpha: 0.3);
+  &:hover{
+    font-size: larger;
+    box-shadow: 0 4px 8px 0 rgba($color: #000000, $alpha: 0.3);
+  }
+  &-current{
+    color: white !important;
+    background-color: palevioletred !important;
   }
 }
 

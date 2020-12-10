@@ -23,8 +23,8 @@ const MyFooter = () => {
             </div>
             <div className={`my-profile-wrapper ${Open && "show-profile"}`}>
                 <div className="my-profile-header flex flex-ai-center">
-                    <div className="my-profile-header-img flex flex-jc-center">
-                        <img style={{ height: "inherit", width: "inherit", borderRadius: "2rem" }}
+                    <div className="my-profile-header-img flex flex-jc-center" >
+                        <img style={{ height: "inherit", width: "inherit",borderRadius:"50%"}}
                             src={HardikPic} />
                     </div>
                     <div className="my-profile-header-right flex" style={{ justifyContent: "space-evenly" }}>
