@@ -11,6 +11,7 @@ import MobileMenu from "../MobileMenu/MobileMenu";
 import SearchBar from "./SearchBar/SearchBar";
 import { LoadingCard } from "./LoadingCards/LoadingCard";
 import MyFooter from "./MyIntro/MyFooter";
+import { Carousel } from "./Carousel/Carousel";
 
 
 export default function Home() {
@@ -36,12 +37,12 @@ export default function Home() {
     <div className="flex flex-col">
       <Menu></Menu>
 
-
-
       <div className="fake-search">
         <SearchBar />
       </div>
-
+      <div className="flex flex-jc-center" style={{width:"100%"}}>
+        <Carousel />
+      </div>
       <div className="" style={{ textAlign: "center" }}>
         <h1 style={{ padding: "2vw" }}>All of tshirts</h1>
       </div>
@@ -52,22 +53,22 @@ export default function Home() {
             loading && (
               <>
                 {
-                  [12, 122, 33].map((val, ind)=>{
-                   return  <LoadingCard />
-                })
-              }
+                  [12, 122, 33].map((val, ind) => {
+                    return <LoadingCard />
+                  })
+                }
               </>
             )
           }
-          </div>
-          <div className="flex flex-row flex-wrap flex-jc-center" style={{ width: "100%" }}>
-            {products?.map((product, index) => {
-              return (
-                <Card product={product} style={{ height: "17rem" }} />
-              );
-            })}
-          </div>
-        
+        </div>
+        <div className="flex flex-row flex-wrap flex-jc-center" style={{ width: "100%" }}>
+          {products?.map((product, index) => {
+            return (
+              <Card product={product} style={{ height: "17rem" }} />
+            );
+          })}
+        </div>
+
       </div>
       <MyFooter />
       <div className="myfakefooter"></div>
