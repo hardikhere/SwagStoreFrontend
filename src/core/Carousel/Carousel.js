@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import banner1 from "../../img/1.png";
+import banner2 from "../../img/2.png";
+import banner3 from "../../img/3.png";
+
 import "./style.scss";
 
 export const Carousel = () => {
@@ -50,6 +54,7 @@ export const Carousel = () => {
     };
 
     const performNext = () => {
+        console.log("perform next called")
         if (CurrentSlide + 1 < Items.length) {
             moveTo(CurrentSlide + 1);
             setCurrentSlide(CurrentSlide + 1);
@@ -72,13 +77,11 @@ export const Carousel = () => {
     return (
         <div className="carousel-wrapper">
             <div className="carousel">
-                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FLRVsxe5OJVY%2Fmaxresdefault.jpg&f=1&nofb=1"
+                <img src={banner1}
                     alt="" className="carousel__photo" srcset="" />
-                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FLRVsxe5OJVY%2Fmaxresdefault.jpg&f=1&nofb=1"
+                <img src={banner2}
                     alt="" className="carousel__photo" srcset="" />
-                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FLRVsxe5OJVY%2Fmaxresdefault.jpg&f=1&nofb=1"
-                    alt="" className="carousel__photo" srcset="" />
-                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FLRVsxe5OJVY%2Fmaxresdefault.jpg&f=1&nofb=1"
+                <img src={banner3}
                     alt="" className="carousel__photo" srcset="" />
                 <div className="carousel__button--next" onClick={performNext}></div>
                 <div className="carousel__button--prev" onClick={performPrev}></div>
